@@ -55,10 +55,6 @@ function App () {
     getMovies({ search })
   }
 
-  const handleSort = () => {
-    setSort(!sort)
-  }
-
   const handleChange = (event) => {
     const newSearch = event.target.value
     updateSearch(newSearch)
@@ -77,7 +73,6 @@ function App () {
               borderColor: error ? 'red' : 'transparent'
             }} onChange={handleChange} value={search} name='query' placeholder='Avengers, Star Wars, The Matrix...'
           />
-          <input type='checkbox' onChange={handleSort} checked={sort} />
           <button type='submit'>Search</button>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
